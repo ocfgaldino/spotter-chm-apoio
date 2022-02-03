@@ -34,13 +34,6 @@ waves = pd.json_normalize(spotter_data, record_path="waves")
 wind = pd.json_normalize(spotter_data, record_path="wind")
 
 
-
-
-
-names = ['Operador']
-usernames = ['marinha_chm']
-passwords = ['M@rinh@_2022']
-
 hashed_passwords = stauth.hasher(os.getenv("password")).generate()
 
 st.set_page_config(layout="wide")
