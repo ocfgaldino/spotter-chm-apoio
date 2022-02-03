@@ -90,7 +90,7 @@ def plot_map_time(spt_waves, mapbox_token):
                   color_continuous_scale=["black", "purple", "red" ], size_max=30, zoom=8,
                   hover_data = {'latitude':True, 'longitude':True, 'timestamp':True, 'Intervalo de Tempo | HORAS':True},
                   height = 700, width = 800, #center = dict(lat = g.center)
-                        title='Histórico | Tempo trajetória',
+                       # title='Histórico | Tempo trajetória',
                         mapbox_style="open-street-map"
                        )
     
