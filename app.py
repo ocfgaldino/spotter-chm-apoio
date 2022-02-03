@@ -34,11 +34,11 @@ waves = pd.json_normalize(spotter_data, record_path="waves")
 wind = pd.json_normalize(spotter_data, record_path="wind")
 
 
-hashed_passwords = stauth.hasher(os.getenv("password")).generate()
+hashed_passwords = stauth.hasher([os.environ["password"]]).generate()
 
 st.set_page_config(layout="wide")
 
-authenticator = stauth.authenticate(os.getenv("user_full_name"),os.getenv("username"),hashed_passwords,
+authenticator = stauth.authenticate([os.environ["user_full_name"]],[os.environ["username"]],hashed_passwords,
     'some_cookie_name','some_signature_key',cookie_expiry_days=30)
 
 name, authentication_status = authenticator.login('Login','main')
@@ -51,6 +51,14 @@ if authentication_status:
     st.write('Olá *%s*' % (name))
     st.markdown("### Sistema desenvolvido pelo Centro de Hidrografia da Marinha - Oceanografia Operacional")
     st.title('Sistema de Ondas em Tempo Real')
+    
+    c1, c2, c3, c4 = st.columns((3,1,1,1))
+    
+    c1.header("### Mapa")
+    
+    c2.metric("Último dado", "9 mph")
+    c3.metric("Hs", "9 mph")
+    c4.metric("Tp", "86%")
     
     
     col3, col4 = st.columns(2)
