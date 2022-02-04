@@ -26,6 +26,7 @@ def plot_waves_hs(spt_waves):
     waves_hs.columns = ['DATA HORA', 'ALTURA SIGNIFICATIVA']
     
     wave_plot = px.line(waves_hs, x='DATA HORA', y="ALTURA SIGNIFICATIVA")
+    wave_plot.update_traces(line=dict(color="Dark Blue", width=2), mode="lines+markers")
     
     return wave_plot
 
@@ -36,6 +37,7 @@ def plot_waves_tp(spt_waves):
     waves_tp.columns = ['DATA HORA', 'PERÍODO DE PICO']
     
     wave_plot = px.line(waves_tp, x='DATA HORA', y="PERÍODO DE PICO")
+    wave_plot.update_traces(line=dict(color="Dark Blue", width=2), mode="lines+markers")   
     
     return wave_plot
     
@@ -45,6 +47,8 @@ def plot_waves_wvdir(spt_waves):
     waves_tp.columns = ['DATA HORA', 'DIREÇÃO MÉDIA DE ONDA']
     
     wave_plot = px.line(waves_tp, x='DATA HORA', y="DIREÇÃO MÉDIA DE ONDA")
+    wave_plot.update_traces(line=dict(color="Dark Blue", width=2), mode="lines+markers")  
+    
     
     return wave_plot
 
@@ -54,6 +58,7 @@ def plot_waves_pkdir(spt_waves):
     waves_tp.columns = ['DATA HORA', 'DIREÇÃO DE PICO DE ONDA']
     
     wave_plot = px.line(waves_tp, x='DATA HORA', y="DIREÇÃO DE PICO DE ONDA")
+    wave_plot.update_traces(line=dict(color="Dark Blue", width=2), mode="lines+markers")  
     
     return wave_plot
 
