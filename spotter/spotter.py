@@ -26,7 +26,9 @@ def plot_waves_hs(spt_waves):
     waves_hs.columns = ['DATA HORA', 'ALTURA SIGNIFICATIVA']
     
     wave_plot = px.line(waves_hs, x='DATA HORA', y="ALTURA SIGNIFICATIVA")
-    wave_plot.update_traces(line=dict(color="Dark Blue", width=2), mode="lines+markers")
+    wave_plot.update_traces(line=dict(color="Blue", width=2), marker=dict(size=4),mode="lines+markers") 
+    wave_plot.update_xaxes(showgrid=True, gridwidth=0.5, gridcolor='LightPink')
+    wave_plot.update_yaxes(showgrid=True, gridwidth=0.5, gridcolor='LightPink')
     
     return wave_plot
 
@@ -37,7 +39,9 @@ def plot_waves_tp(spt_waves):
     waves_tp.columns = ['DATA HORA', 'PERÍODO DE PICO']
     
     wave_plot = px.line(waves_tp, x='DATA HORA', y="PERÍODO DE PICO")
-    wave_plot.update_traces(line=dict(color="Dark Blue", width=2), mode="lines+markers")   
+    wave_plot.update_traces(line=dict(color="Blue", width=2), marker=dict(size=4),mode="lines+markers") 
+    wave_plot.update_xaxes(showgrid=True, gridwidth=0.5, gridcolor='LightPink')
+    wave_plot.update_yaxes(showgrid=True, gridwidth=0.5, gridcolor='LightPink')
     
     return wave_plot
     
@@ -47,7 +51,10 @@ def plot_waves_wvdir(spt_waves):
     waves_tp.columns = ['DATA HORA', 'DIREÇÃO MÉDIA DE ONDA']
     
     wave_plot = px.line(waves_tp, x='DATA HORA', y="DIREÇÃO MÉDIA DE ONDA")
-    wave_plot.update_traces(line=dict(color="Dark Blue", width=2), mode="lines+markers")  
+    wave_plot.update_traces(line=dict(color="Blue", width=2), marker=dict(size=4),mode="lines+markers") 
+    wave_plot.update_xaxes(showgrid=True, gridwidth=0.5, gridcolor='LightPink')
+    wave_plot.update_yaxes(showgrid=True, gridwidth=0.5, gridcolor='LightPink')
+    
     
     
     return wave_plot
@@ -58,7 +65,9 @@ def plot_waves_pkdir(spt_waves):
     waves_tp.columns = ['DATA HORA', 'DIREÇÃO DE PICO DE ONDA']
     
     wave_plot = px.line(waves_tp, x='DATA HORA', y="DIREÇÃO DE PICO DE ONDA")
-    wave_plot.update_traces(line=dict(color="Dark Blue", width=2), mode="lines+markers")  
+    wave_plot.update_traces(line=dict(color="Blue", width=2), marker=dict(size=4),mode="lines+markers") 
+    wave_plot.update_xaxes(showgrid=True, gridwidth=0.5, gridcolor='LightPink')
+    wave_plot.update_yaxes(showgrid=True, gridwidth=0.5, gridcolor='LightPink')
     
     return wave_plot
 
@@ -92,7 +101,7 @@ def plot_map_time(spt_waves, mapbox_token):
     
     
     fig = px.scatter_mapbox(spt_waves, lat="latitude", lon="longitude", color='Intervalo de Tempo | HORAS',
-                  color_continuous_scale=["black", "purple", "red" ], size_max=30, zoom=8,
+                  color_continuous_scale=["black", "purple", "red" ], size_max=30, zoom=14,
                   hover_data = {'latitude':True, 'longitude':True, 'timestamp':True, 'Intervalo de Tempo | HORAS':True},
                   height = 700, width = 800, #center = dict(lat = g.center)
                        # title='Histórico | Tempo trajetória',
