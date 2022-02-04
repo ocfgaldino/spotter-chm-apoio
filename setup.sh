@@ -17,7 +17,6 @@ primaryColor = "#E694FF"
 backgroundColor = "#0c0538"
 secondaryBackgroundColor = "#bac4d6"
 textColor = "#C6CDD4"
-font="sans"
 
 
 " > ~/.streamlit/config.toml
